@@ -9,12 +9,20 @@
           <label for="number">Number 2</label>
           <input type="number" name="number2" id="number2" [(ngModel)]="number2" />
 
+          <label for="Coeficient">Operation:</label>
+              <select id="Coeficient" name="Coeficient"  [(ngModel)]="coeficient">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="x">x</option>
+              </select>
+
           <button type="submit" (click)="CalculatorResult()">Add</button>
        </form>
 
 
 
-       @if (result) {
+       @if (result)  {
          <div class="result-display">
            <p>Result: <span id="result">{{result}}</span></p>
          </div>

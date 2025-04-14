@@ -13,11 +13,28 @@ export class CalculatorComponent {
 
   number1:  number = 0;
   number2: number = 0;
-  result: number = 0;
+  result: number | null = null;
+  coeficient : string = '';
 
   CalculatorResult(){
 
-    this.result = this.number1 + this.number2;
+    switch (this.coeficient) {
+      case '+':
+        this.result = (this.number1 + this.number2);
+        break;
+      case '-':
+        this.result = (this.number1 - this.number2);
+        break;
+      case 'x':
+        this.result = (this.number1 * this.number2);
+        break;
+      case '/':
+        this.result = this.number2 !== 0 ? this.number1 / this.number2 : NaN;
+        break;
+      default:
+        this.result = NaN;
+
+    }
 
   }
 
